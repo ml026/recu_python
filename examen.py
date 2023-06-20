@@ -48,5 +48,27 @@ diccionario_final = combinar(diccionario_nombres_edades, diccionario_nombres_pro
 print(diccionario_final)
 
 
+#Ej4
+def palabra_repetida(fichero):
+    contador = {}
+    p_mas_repetida = None
+    max_repeticiones = 0
+    with open (fichero,'r') as archivo:
+        for linea in archivo:
+            palabra=linea.strip()
+        if palabra in contador:
+            contador[palabra]= ( contador[palabra]) +1
+
+        if contador[palabra]>max_repeticiones:
+            max_repeticiones=contador[palabra]
+            p_mas_repetida=palabra
+            return p_mas_repetida
+        
+fichero="palabras.txt"
+p_mas_repetida=palabra_repetida(fichero)
+print("La palabra más repetida es:", p_mas_repetida)
+
+
+
     
     
